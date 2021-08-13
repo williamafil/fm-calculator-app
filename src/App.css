@@ -1,0 +1,11 @@
+#App.theme-one {
+  @apply bg-dark-mainBg h-screen;
+}
+
+#App.theme-two {
+  @apply bg-light-mainBg h-screen;
+}
+
+#App.theme-three {
+  @apply bg-violet-mainBg h-screen;
+}
