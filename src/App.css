@@ -1,11 +1,53 @@
+/* DARK */
 #App.theme-one {
-  @apply bg-dark-mainBg h-screen;
+  @apply bg-dark-mainBg h-screen text-dark-text;
 }
 
+#App.theme-one .switch-bg {
+  @apply bg-dark-switchBg;
+}
+
+#App.theme-one .result {
+  @apply w-full bg-dark-resultBg rounded-xl text-dark-text;
+}
+
+#App.theme-one .keypad {
+  @apply bg-dark-keypadBg;
+}
+
+
+
+/* LIGHT */
 #App.theme-two {
-  @apply bg-light-mainBg h-screen;
+  @apply bg-light-mainBg h-screen text-light-text;
 }
 
+
+#App.theme-two .switch-bg {
+  @apply bg-light-switchBg;
+}
+
+#App.theme-two .result {
+  @apply w-full bg-light-resultBg rounded-xl text-light-text;
+}
+
+#App.theme-two .keypad {
+  @apply bg-light-keypadBg;
+}
+
+/* VIOLET */
 #App.theme-three {
-  @apply bg-violet-mainBg h-screen;
+  @apply bg-violet-mainBg h-screen text-violet-text text-violet-text;
+}
+
+#App.theme-three .switch-bg {
+  @apply bg-violet-switchBg;
+}
+
+#App.theme-three .result {
+  @apply w-full bg-violet-resultBg rounded-xl text-violet-text;
+}
+
+#App.theme-three .keypad {
+  @apply bg-violet-keypadBg;
 }
