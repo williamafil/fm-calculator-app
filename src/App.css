@@ -7,47 +7,92 @@
   @apply bg-dark-switchBg;
 }
 
+#App.theme-one .switch-btn {
+  @apply bg-dark-switchBtn hover:bg-dark-hoverToggle;
+}
+
 #App.theme-one .result {
-  @apply w-full bg-dark-resultBg rounded-xl text-dark-text;
+  @apply bg-dark-resultBg text-dark-text;
 }
 
 #App.theme-one .keypad {
   @apply bg-dark-keypadBg;
 }
 
+#App.theme-one .key {
+  @apply bg-dark-keyBg text-dark-keyText shadow-darkKey hover:bg-dark-hoverKeyBg;
+}
 
+#App.theme-one .sp-key {
+  @apply bg-dark-keySp text-white shadow-darkSpKey hover:bg-dark-hoverKeySp;
+}
+
+#App.theme-one .eq-key {
+  @apply bg-dark-keyEq text-dark-keyEqText shadow-darkEqKey hover:bg-dark-hoverKeyEq;
+}
 
 /* LIGHT */
 #App.theme-two {
   @apply bg-light-mainBg h-screen text-light-text;
 }
 
-
 #App.theme-two .switch-bg {
   @apply bg-light-switchBg;
 }
 
+#App.theme-two .switch-btn {
+  @apply bg-dark-toggle hover:bg-light-hoverToggle;
+}
+
 #App.theme-two .result {
-  @apply w-full bg-light-resultBg rounded-xl text-light-text;
+  @apply bg-light-resultBg text-light-text;
 }
 
 #App.theme-two .keypad {
   @apply bg-light-keypadBg;
 }
 
+#App.theme-two .key {
+  @apply bg-light-keyBg text-light-keyText shadow-lightKey hover:bg-light-hoverKeyBg;
+}
+
+#App.theme-two .sp-key {
+  @apply bg-light-keySp text-white shadow-lightSpKey hover:bg-light-hoverKeySp;
+}
+
+#App.theme-two .eq-key {
+  @apply bg-light-keyEq text-light-keyEqText shadow-lightEqKey hover:bg-light-hoverKeyEq;
+}
+
 /* VIOLET */
 #App.theme-three {
-  @apply bg-violet-mainBg h-screen text-violet-text text-violet-text;
+  @apply bg-violet-mainBg h-screen text-violet-text;
 }
 
 #App.theme-three .switch-bg {
   @apply bg-violet-switchBg;
 }
 
+#App.theme-three .switch-btn {
+  @apply bg-dark-toggle hover:bg-violet-hoverToggle;
+}
+
 #App.theme-three .result {
-  @apply w-full bg-violet-resultBg rounded-xl text-violet-text;
+  @apply bg-violet-resultBg text-violet-text;
 }
 
 #App.theme-three .keypad {
   @apply bg-violet-keypadBg;
+}
+
+#App.theme-three .key {
+  @apply bg-violet-keyBg text-violet-text shadow-violetKey hover:bg-violet-hoverKeyBg;
+}
+
+#App.theme-three .sp-key {
+  @apply bg-violet-keySp text-white shadow-violetSpKey hover:bg-violet-hoverKeySp;
+}
+
+#App.theme-three .eq-key {
+  @apply bg-violet-keyEq text-violet-keyEqText shadow-violetEqKey hover:bg-violet-hoverKeyEq;
 }
