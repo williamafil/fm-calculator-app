@@ -125,7 +125,11 @@ class App extends React.Component {
           </header>
           <main>
             <section className="result w-full rounded-xl mt-8 h-20 p-6 flex items-center justify-end">
-              <h2 className="text-3xl font-bold">399,981</h2>
+              <input
+                type="number"
+                className="w-full h-20 text-3xl font-bold text-right outline-none bg-transparent"
+              />
+              {/* <h2 className="text-3xl font-bold">399,981</h2> */}
             </section>
             <section className="keypad rounded-xl p-6 mt-8">
               <form>
