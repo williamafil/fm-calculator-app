@@ -89,7 +89,7 @@ class App extends React.Component {
   render() {
     return (
       <div id="App">
-        <div className="container mx-auto p-6">
+        <div className="container max-w-xl mx-auto p-6">
           <header className="flex justify-between items-center">
             <h1 className="text-3xl font-bold">calc</h1>
             <div className="flex items-end">

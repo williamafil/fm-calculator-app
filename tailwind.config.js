@@ -3,6 +3,9 @@ module.exports = {
   purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    screens: {
+      xs: { max: "539px" },
+    },
     extend: {
       colors: {
         cyan: {
