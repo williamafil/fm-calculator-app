@@ -72,6 +72,7 @@
   @apply bg-light-keyEq text-light-keyEqText shadow-lightEqKey hover:bg-light-hoverKeyEq;
 }
 
+
 /* VIOLET */
 #App.theme-three {
   @apply bg-violet-mainBg h-screen text-violet-text;

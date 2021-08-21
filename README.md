@@ -31,8 +31,8 @@ Users is able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/williamafil/fm-calculator-app](https://github.com/williamafil/fm-calculator-app)
+- Live Demo URL: [https://calc-app-lime.vercel.app/](https://calc-app-lime.vercel.app/)
 
 ## My process
 
@@ -43,39 +43,38 @@ Users is able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Tailwind CSS
+- ReactJS
+- Vite
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+##### Theme Switcher
 
-To see how you can add code snippets, see below:
+I got idea on achieving toggle between three themes from this website. I simply have preset color scheme in tailwind.config.js and setup custom properties in css file. In react App element I bind a custom class 'theme-one' which refers to the custom css properties.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div id="App" class="theme-one">...</div>
 ```
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+/* DARK */
+#App.theme-one {
+  @apply bg-dark-mainBg h-screen text-dark-text;
+}
+
+#App.theme-one .switch-bg {
+  @apply bg-dark-switchBg;
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
+[A Complete Guide to Dark Mode on the Web: Using Custom Properties - CSS Tricks](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/#using-custom-properties)
 
-defaultValue vs value
+<br/>
 
-```
-In React, defaultValue is used with uncontrolled form components whereas value is used with controlled form components. ... They should not be used together in a form element.
-```
+##### defaultValue vs value
+
+> In React, defaultValue is used with uncontrolled form components whereas value is used with controlled form components. ... They should not be used together in a form element.
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
@@ -83,27 +82,15 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Key press detection. User is able to insert numbers and operators using keyboard
+- Solve decimal problem
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [A Complete Guide to Dark Mode on the Web](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/#using-custom-properties) - This helped me for dark/light mode.
+- [Detecting Dark Mode with Javascript](https://usefulangle.com/post/318/javascript-check-dark-mode-activated) - Nice article on detecting prefer-color-scheme using JavaScript
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [William Kang](https://williamafil.github.io/fm-tip-calculator/)
+- Frontend Mentor - [@williamafil](https://www.frontendmentor.io/profile/williamafil)
