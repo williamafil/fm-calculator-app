@@ -23,6 +23,10 @@
   @apply bg-dark-keyBg text-dark-keyText shadow-darkKey hover:bg-dark-hoverKeyBg;
 }
 
+#App.theme-one .active {
+  @apply bg-dark-hoverKeyBg;
+}
+
 #App.theme-one .sp-key {
   @apply bg-dark-keySp text-white shadow-darkSpKey hover:bg-dark-hoverKeySp;
 }
@@ -56,6 +60,10 @@
   @apply bg-light-keyBg text-light-keyText shadow-lightKey hover:bg-light-hoverKeyBg;
 }
 
+#App.theme-two .active {
+  @apply bg-light-hoverKeyBg;
+}
+
 #App.theme-two .sp-key {
   @apply bg-light-keySp text-white shadow-lightSpKey hover:bg-light-hoverKeySp;
 }
@@ -87,6 +95,10 @@
 
 #App.theme-three .key {
   @apply bg-violet-keyBg text-violet-text shadow-violetKey hover:bg-violet-hoverKeyBg;
+}
+
+#App.theme-three .active {
+  @apply bg-violet-hoverKeyBg;
 }
 
 #App.theme-three .sp-key {
