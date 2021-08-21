@@ -1,86 +1,16 @@
 import React from "react";
 import "./App.css";
+import clsx from "./utilities/clsx";
 import KeyBtn from "./components/KeyBtn";
+import { SwitchGroup, SwitchBtn } from "./components/SwitchGroup";
 
-function clsx(...args) {
-  return args.join(" ");
-}
-
-function SwitchGroup({ children, className, onChangeTheme }) {
-  function onChange(event) {
-    onChangeTheme(event.target.value);
-  }
-
-  return (
-    <div className={clsx("flex flex-col", className)}>
-      <div className="flex justify-between px-2">
-        {[...Array(children.length)].map((i, index) => (
-          <span className="w-4 text-xs font-bold text-center" key={index}>
-            {index + 1}
-          </span>
-        ))}
-      </div>
-      <form
-        className="switch-bg w-full rounded-full p-2"
-        onChangeCapture={onChange}
-      >
-        <fieldset className="flex justify-between">{children}</fieldset>
-      </form>
-    </div>
-  );
-}
-
-function SwitchBtn({ id, name, currentTheme, checked, className }) {
-  return (
-    <div className="flex justify-center">
-      <input
-        type="radio"
-        id={id}
-        name={name}
-        value={id}
-        className="sr-only peer"
-        defaultChecked={checked}
-      />
-      <label
-        htmlFor={id}
-        className={clsx(
-          "w-4 h-4 rounded-full text-center ",
-          className,
-          currentTheme === "theme-three"
-            ? "peer-checked:bg-cyan-toggle-btn"
-            : "peer-checked:bg-red-toggle-btn",
-        )}
-      ></label>
-    </div>
-  );
-}
-
-// function KeyBtn({
-//   type = "button",
-//   id,
-//   value,
-//   name,
-//   className,
-//   onChangeOperator,
-//   optActive,
-// }) {
-//   return (
-//     <button
-//       type={type}
-//       id={id}
-//       value={value}
-//       className={clsx("w-full", className, optActive && "bg-red-500")}
-//       onClickCapture={onChangeOperator}
-//     >
-//       {name}
-//     </button>
-//   );
-// }
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      theme: "theme-two",
+      theme: window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "theme-one"
+        : "theme-two",
       input: 0,
       num: 0,
       operator: "",
@@ -136,10 +66,7 @@ class App extends React.Component {
         num: this.state.input,
         input: 0,
       });
-      // this.setState({ input: 0 });
-      console.log(this.state);
     }
-    console.log(this.state);
   };
 
   onToggleOperatorBtn = () => {
@@ -259,19 +186,16 @@ class App extends React.Component {
           </header>
           <main>
             <form>
-              <section className="result w-full rounded-xl mt-8 h-20 p-6 flex items-center justify-end">
+              <fieldset className="result w-full rounded-xl mt-8 h-20 p-6 flex items-center justify-end">
                 <input
                   type="number"
                   className="w-full h-20 text-3xl font-bold text-right outline-none bg-transparent"
                   step="any"
-                  max="999999999"
-                  min="0.0000000001"
                   onChange={this.onChangeNumber}
                   value={this.state.input}
                 />
-                {/* <h2 className="text-3xl font-bold">399,981</h2> */}
-              </section>
-              <section className="keypad rounded-xl p-6 mt-8">
+              </fieldset>
+              <fieldset className="keypad rounded-xl p-6 mt-8">
                 <div className="grid gap-3 grid-cols-4">
                   <KeyBtn
                     id="seven"
@@ -407,13 +331,6 @@ class App extends React.Component {
                   >
                     reset
                   </button>
-                  {/* <KeyBtn
-                    type="reset"
-                    id="reset"
-                    value="reset"
-                    name="reset"
-                    className="sp-key h-16 rounded-md text-lg font-bold col-span-2 uppercase"
-                  /> */}
                   <button
                     id="equal"
                     name="="
@@ -422,15 +339,8 @@ class App extends React.Component {
                   >
                     =
                   </button>
-                  {/* <KeyBtn
-                    id="equal"
-                    value="="
-                    name="="
-                    className="eq-key h-16 rounded-md text-lg font-bold col-span-2"
-                    onClick={this.onHandleResult}
-                  /> */}
                 </div>
-              </section>
+              </fieldset>
             </form>
           </main>
         </div>
