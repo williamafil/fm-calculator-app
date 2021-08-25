@@ -1,6 +1,6 @@
 # Frontend Mentor - Calculator app solution
 
-This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
 
 ## Table of contents
 
@@ -20,7 +20,7 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 
 Users is able to:
 
-- Adjust calculator side based on user's browser size
+- Adjust calculator size based on user's browser size
 - Perform simple math calculation such as addition, subtraction, division, and multiplication
 - User is able to change color scheme
 - App automatically detect browser's `prefers-color-scheme`
