@@ -39,7 +39,7 @@ export function SwitchBtn({ id, name, currentTheme, checked, className }) {
       <label
         htmlFor={id}
         className={clsx(
-          "w-4 h-4 rounded-full text-center ",
+          "w-4 h-4 rounded-full text-center cursor-pointer hover:bg-gray-50 hover:opacity-10",
           className,
           currentTheme === "theme-three"
             ? "peer-checked:bg-cyan-toggle-btn"
