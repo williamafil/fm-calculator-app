@@ -150,199 +150,204 @@ class App extends React.Component {
   render() {
     return (
       <div id="App">
-        <div className="container max-w-xl mx-auto p-6">
-          <header className="flex justify-between items-center">
-            <h1 className="text-3xl font-bold">calc</h1>
-            <div className="flex items-end">
-              <h2 className="uppercase text-xs font-bold mb-1 mr-5">Theme</h2>
-              <SwitchGroup
-                label="Theme Switch"
-                className="w-20"
-                onChangeTheme={this.onChangeTheme}
-              >
-                <SwitchBtn
-                  id="theme-one"
-                  name="theme-switch"
-                  label="1"
-                  currentTheme={this.state.theme}
-                  checked={this.state.theme === "theme-one" && "checked"}
-                />
-                <SwitchBtn
-                  id="theme-two"
-                  name="theme-switch"
-                  label="2"
-                  currentTheme={this.state.theme}
-                  checked={this.state.theme === "theme-two" && "checked"}
-                />
-                <SwitchBtn
-                  id="theme-three"
-                  name="theme-switch"
-                  label="3"
-                  currentTheme={this.state.theme}
-                  checked={this.state.theme === "theme-three" && "checked"}
-                />
-              </SwitchGroup>
-            </div>
-          </header>
-          <main>
-            <form>
-              <fieldset className="result w-full rounded-xl mt-8 h-20 p-6 flex items-center justify-end">
-                <input
-                  type="number"
-                  className="w-full h-20 text-3xl font-bold text-right outline-none bg-transparent"
-                  step="any"
-                  onChange={this.onChangeNumber}
-                  value={this.state.input}
-                />
-              </fieldset>
-              <fieldset className="keypad rounded-xl p-6 mt-8">
-                <div className="grid gap-3 grid-cols-4">
-                  <KeyBtn
-                    id="seven"
-                    value="7"
-                    name="7"
-                    className="key h-16 rounded-md text-3xl font-bold"
-                    onInputHandler={this.onInputNumber}
-                  />
-                  <KeyBtn
-                    id="eight"
-                    value="8"
-                    name="8"
-                    className="key h-16 rounded-md text-3xl font-bold"
-                    onInputHandler={this.onInputNumber}
-                  />
-                  <KeyBtn
-                    id="nine"
-                    value="9"
-                    name="9"
-                    className="key h-16 rounded-md text-3xl font-bold"
-                    onInputHandler={this.onInputNumber}
-                  />
-                  <KeyBtn
-                    id="delete"
-                    value="delete"
-                    name="del"
-                    className="sp-key h-16 rounded-md text-lg font-bold uppercase"
-                    onRemoveLastDigit={this.onRemoveLastDigit}
-                  />
-                  <KeyBtn
-                    id="four"
-                    value="4"
-                    name="4"
-                    className="key h-16 rounded-md text-3xl font-bold"
-                    onInputHandler={this.onInputNumber}
-                  />
-                  <KeyBtn
-                    id="five"
-                    value="5"
-                    name="5"
-                    className="key h-16 rounded-md text-3xl font-bold"
-                    onInputHandler={this.onInputNumber}
-                  />
-                  <KeyBtn
-                    id="six"
-                    value="6"
-                    name="6"
-                    className="key h-16 rounded-md text-3xl font-bold"
-                    onInputHandler={this.onInputNumber}
-                  />
-                  <KeyBtn
-                    id="addition"
-                    value="+"
-                    name="+"
-                    className="key h-16 rounded-md text-3xl font-bold"
-                    onChangeOperator={this.onChangeOperator}
-                    ref={this.additionRef}
-                  />
-                  <KeyBtn
-                    id="one"
-                    value="1"
-                    name="1"
-                    className="key h-16 rounded-md text-3xl font-bold"
-                    onInputHandler={this.onInputNumber}
-                  />
-                  <KeyBtn
-                    id="two"
-                    value="2"
-                    name="2"
-                    className="key h-16 rounded-md text-3xl font-bold"
-                    onInputHandler={this.onInputNumber}
-                  />
-                  <KeyBtn
-                    id="three"
-                    value="3"
-                    name="3"
-                    className="key h-16 rounded-md text-3xl font-bold"
-                    onInputHandler={this.onInputNumber}
-                  />
-                  <KeyBtn
-                    id="subtraction"
-                    value="-"
-                    name="-"
-                    className="key h-16 rounded-md text-3xl font-bold"
-                    onChangeOperator={this.onChangeOperator}
-                    ref={this.subtractionRef}
-                  />
-                  <KeyBtn
-                    id="decimal"
-                    value="."
-                    name="."
-                    className="key h-16 rounded-md text-3xl font-bold"
-                    onInputHandler={this.onInputNumber}
-                    // onInputHandler={() => this.setState({ decimal: true })}
-                  />
-                  <KeyBtn
-                    id="zero"
-                    value="0"
-                    name="0"
-                    className="key h-16 rounded-md text-3xl font-bold"
-                    onInputHandler={this.onInputNumber}
-                  />
-                  <KeyBtn
-                    id="division"
-                    value="/"
-                    name="/"
-                    className="key h-16 rounded-md text-3xl font-bold"
-                    onChangeOperator={this.onChangeOperator}
-                    ref={this.divisionRef}
-                  />
-                  <KeyBtn
-                    id="multiply"
-                    value="x"
-                    name="x"
-                    className="key h-16 rounded-md text-3xl font-bold"
-                    onChangeOperator={this.onChangeOperator}
-                    ref={this.multiplicationRef}
-                  />
-                  <button
-                    type="reset"
-                    id="reset"
-                    value="reset"
-                    name="reset"
-                    className="sp-key h-16 rounded-md text-lg font-bold col-span-2 uppercase"
-                    onClickCapture={() =>
-                      this.setState({
-                        num: 0,
-                        decimal: false,
-                        input: 0,
-                        operator: "",
-                      })
-                    }
+        <div className="container max-w-xl mx-auto h-screen">
+          <div className="w-full h-full flex flex-col justify-center items-center">
+            <main>
+              <header className="flex justify-between items-center">
+                <h1 className="text-3xl font-bold">calc</h1>
+                <div className="flex items-end">
+                  <h2 className="uppercase text-xs font-bold mb-1 mr-5">
+                    Theme
+                  </h2>
+                  <SwitchGroup
+                    label="Theme Switch"
+                    className="w-20"
+                    onChangeTheme={this.onChangeTheme}
                   >
-                    reset
-                  </button>
-                  <button
-                    id="equal"
-                    name="="
-                    className="eq-key h-16 rounded-md text-lg font-bold col-span-2"
-                    onClick={this.onHandleResult}
-                  >
-                    =
-                  </button>
+                    <SwitchBtn
+                      id="theme-one"
+                      name="theme-switch"
+                      label="1"
+                      currentTheme={this.state.theme}
+                      checked={this.state.theme === "theme-one" && "checked"}
+                    />
+                    <SwitchBtn
+                      id="theme-two"
+                      name="theme-switch"
+                      label="2"
+                      currentTheme={this.state.theme}
+                      checked={this.state.theme === "theme-two" && "checked"}
+                    />
+                    <SwitchBtn
+                      id="theme-three"
+                      name="theme-switch"
+                      label="3"
+                      currentTheme={this.state.theme}
+                      checked={this.state.theme === "theme-three" && "checked"}
+                    />
+                  </SwitchGroup>
                 </div>
-              </fieldset>
-            </form>
-          </main>
+              </header>
+
+              <form>
+                <fieldset className="result w-full rounded-xl mt-8 h-20 flex items-center justify-end">
+                  <input
+                    type="number"
+                    className="w-full h-20 text-3xl font-bold text-right outline-none bg-transparent pr-4"
+                    step="any"
+                    onChange={this.onChangeNumber}
+                    value={this.state.input}
+                  />
+                </fieldset>
+                <fieldset className="keypad rounded-xl p-6 mt-8">
+                  <div className="grid gap-3 grid-cols-4">
+                    <KeyBtn
+                      id="seven"
+                      value="7"
+                      name="7"
+                      className="key h-16 rounded-md text-3xl font-bold"
+                      onInputHandler={this.onInputNumber}
+                    />
+                    <KeyBtn
+                      id="eight"
+                      value="8"
+                      name="8"
+                      className="key h-16 rounded-md text-3xl font-bold"
+                      onInputHandler={this.onInputNumber}
+                    />
+                    <KeyBtn
+                      id="nine"
+                      value="9"
+                      name="9"
+                      className="key h-16 rounded-md text-3xl font-bold"
+                      onInputHandler={this.onInputNumber}
+                    />
+                    <KeyBtn
+                      id="delete"
+                      value="delete"
+                      name="del"
+                      className="sp-key h-16 rounded-md text-lg font-bold uppercase"
+                      onRemoveLastDigit={this.onRemoveLastDigit}
+                    />
+                    <KeyBtn
+                      id="four"
+                      value="4"
+                      name="4"
+                      className="key h-16 rounded-md text-3xl font-bold"
+                      onInputHandler={this.onInputNumber}
+                    />
+                    <KeyBtn
+                      id="five"
+                      value="5"
+                      name="5"
+                      className="key h-16 rounded-md text-3xl font-bold"
+                      onInputHandler={this.onInputNumber}
+                    />
+                    <KeyBtn
+                      id="six"
+                      value="6"
+                      name="6"
+                      className="key h-16 rounded-md text-3xl font-bold"
+                      onInputHandler={this.onInputNumber}
+                    />
+                    <KeyBtn
+                      id="addition"
+                      value="+"
+                      name="+"
+                      className="key h-16 rounded-md text-3xl font-bold"
+                      onChangeOperator={this.onChangeOperator}
+                      ref={this.additionRef}
+                    />
+                    <KeyBtn
+                      id="one"
+                      value="1"
+                      name="1"
+                      className="key h-16 rounded-md text-3xl font-bold"
+                      onInputHandler={this.onInputNumber}
+                    />
+                    <KeyBtn
+                      id="two"
+                      value="2"
+                      name="2"
+                      className="key h-16 rounded-md text-3xl font-bold"
+                      onInputHandler={this.onInputNumber}
+                    />
+                    <KeyBtn
+                      id="three"
+                      value="3"
+                      name="3"
+                      className="key h-16 rounded-md text-3xl font-bold"
+                      onInputHandler={this.onInputNumber}
+                    />
+                    <KeyBtn
+                      id="subtraction"
+                      value="-"
+                      name="-"
+                      className="key h-16 rounded-md text-3xl font-bold"
+                      onChangeOperator={this.onChangeOperator}
+                      ref={this.subtractionRef}
+                    />
+                    <KeyBtn
+                      id="decimal"
+                      value="."
+                      name="."
+                      className="key h-16 rounded-md text-3xl font-bold"
+                      onInputHandler={this.onInputNumber}
+                      // onInputHandler={() => this.setState({ decimal: true })}
+                    />
+                    <KeyBtn
+                      id="zero"
+                      value="0"
+                      name="0"
+                      className="key h-16 rounded-md text-3xl font-bold"
+                      onInputHandler={this.onInputNumber}
+                    />
+                    <KeyBtn
+                      id="division"
+                      value="/"
+                      name="/"
+                      className="key h-16 rounded-md text-3xl font-bold"
+                      onChangeOperator={this.onChangeOperator}
+                      ref={this.divisionRef}
+                    />
+                    <KeyBtn
+                      id="multiply"
+                      value="x"
+                      name="x"
+                      className="key h-16 rounded-md text-3xl font-bold"
+                      onChangeOperator={this.onChangeOperator}
+                      ref={this.multiplicationRef}
+                    />
+                    <button
+                      type="reset"
+                      id="reset"
+                      value="reset"
+                      name="reset"
+                      className="sp-key h-16 rounded-md text-lg font-bold col-span-2 uppercase"
+                      onClickCapture={() =>
+                        this.setState({
+                          num: 0,
+                          decimal: false,
+                          input: 0,
+                          operator: "",
+                        })
+                      }
+                    >
+                      reset
+                    </button>
+                    <button
+                      id="equal"
+                      name="="
+                      className="eq-key h-16 rounded-md text-lg font-bold col-span-2"
+                      onClick={this.onHandleResult}
+                    >
+                      =
+                    </button>
+                  </div>
+                </fieldset>
+              </form>
+            </main>
+          </div>
         </div>
       </div>
     );
