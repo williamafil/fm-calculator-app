@@ -152,7 +152,7 @@ class App extends React.Component {
       <div id="App">
         <div className="container max-w-xl mx-auto h-screen">
           <div className="w-full h-full flex flex-col justify-center items-center">
-            <main>
+            <main className="p-6 rounded-md border-4 border-white border-opacity-50">
               <header className="flex justify-between items-center">
                 <h1 className="text-3xl font-bold">calc</h1>
                 <div className="flex items-end">
